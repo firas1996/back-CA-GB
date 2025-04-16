@@ -5,9 +5,13 @@ const {
   getUserById,
   updateUser,
   deleteUser,
+  signUp,
+  signin,
 } = require("../controllers/userController");
 const Router = express.Router();
 
+Router.post("/signup", signUp);
+Router.post("/signin", signin);
 Router.post("/", createUser);
 Router.get("/", getAllUsers);
 Router.get("/:id", getUserById);

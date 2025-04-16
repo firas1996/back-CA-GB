@@ -18,11 +18,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "The password is required !!!"],
     minlength: 6,
+    // select: false,
   },
   confirmPassword: {
     type: String,
     required: [true, "The password is required !!!"],
     minlength: 6,
+    // select: false,
     validate: {
       validator: function (cPass) {
         return cPass === this.password;
